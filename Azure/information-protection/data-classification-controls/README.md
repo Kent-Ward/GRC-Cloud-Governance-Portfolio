@@ -1,150 +1,221 @@
-# Information Classification & Protection (Microsoft Purview)
+# Information Classification & Protection
 
-## Overview
+(Microsoft Purview - Sensitivity Labels & Data Governance)
 
-This project demonstrates the design and implementation of an information classification and protection model using Microsoft Purview Sensitivity Labels in a small-to-medium business (SMB) environment.
+---
 
-The focus of this work is governance-first design — prioritizing clarity, risk reduction, and operational maturity over rushed enforcement.
+## Executive Summary
 
-Rather than enabling every available control, this implementation intentionally sequences protections based on organizational size, risk surface, and adoption readiness.
+This project demonstrates the design and implementation of a structured **information classification and protection model** using Microsoft Purview Sensitivity Labels in a small-to-medium business (SMB) environment.
+
+The objective was to reduce data exposure risk by introducing a defensible classification hierarchy, encryption-backed protection for sensitive information, and a phased adoption strategy aligned to governance maturity principles.
+
+---
+
+## Governance Problem
+
+Organizations frequently struggle with:
+
+- Inconsistent classification of sensitive data
+
+- Overuse or underuse of encryption controls
+
+- Lack of formalized data handling policies
+
+- Enforcement mechanisms deployed before user adoption
+
+Without a structured classification model, sensitive information is exposed to accidental sharing, regulatory risk, and uncontrolled distribution.
+
+**Risk Theme:** Data Governance & Information Protection (Improper classification + uncontrolled data exposure)
 
 ---
 
 ## Objectives
 
-- Design a clear, scalable data classification model  
-- Implement encryption-backed protection for sensitive information  
-- Establish a defensible label hierarchy and priority model  
-- Publish labels in a way that supports adoption before enforcement  
-- Align technical controls to common compliance frameworks (SOC 2, ISO 27001, NIST)
+- Design a scalable classification taxonomy
+
+- Implement encryption-backed protection for high-risk data
+
+- Establish a clear label priority model
+
+- Deploy labels in an adoption-first sequence
+
+- Align technical implementation to recognized compliance frameworks
 
 ---
 
-## Classification Model
+## Environment & Scope
 
-The following sensitivity labels were designed and implemented:
+- Platform: Microsoft Purview (M365 / Entra ecosystem)
 
-| Label        | Purpose                                           | Enforcement Level                     |
-|--------------|---------------------------------------------------|---------------------------------------|
-| Public       | Information approved for public distribution      | Classification only                   |
-| Internal     | Internal business information                     | Visual marking (footer)               |
-| Confidential | Sensitive business or client information          | Encryption + access control            |
-| Restricted  | Highly sensitive security or credential data      | Strong encryption + restricted access |
+- Protection Technology: Microsoft Rights Management (RMS)
 
-### Label Priority (Highest → Lowest)
+- Deployment Model: Manual labeling with staged governance maturity
+
+- Organizational Context: SMB environment with controlled rollout
+
+---
+
+## Repository Structure
+
+```
+data-classification-controls/
+├── policies/
+├── risk/
+├── screenshots/
+└── README.md
+```
+---
+
+## Classification Model Implemented
+
+| Label        | Purpose                                           | Enforcement Level                        |
+|--------------|---------------------------------------------------|------------------------------------------|
+| Public       | Approved for public distribution                  | Classification only                      |
+| Internal     | Internal business information                     | Visual marking (footer)                  |
+| Confidential | Sensitive business or client information          | Encryption + access control              |
+| Restricted   | Highly sensitive security or credential data      | Strong encryption + restricted forwarding |
+
+### Label Priority (Highest -> Lowest)
 
 1. Restricted  
 2. Confidential  
 3. Internal  
 4. Public  
 
-This ensures the most restrictive label always takes precedence in conflict scenarios.
+This ensures the most restrictive label prevails in conflict scenarios.
 
 ---
 
-## Scope of Implementation
+## Remediation Outcome
 
-### In Scope
+**Before**
 
-- Sensitivity label creation  
-- Label priority configuration  
-- Encryption via Microsoft Rights Management (RMS)  
-- File and email protection  
-- Label publishing policy design  
-- User-facing rollout (email and documents)  
+- No standardized classification hierarchy
 
-### Out of Scope (Intentional)
+- Inconsistent protection of sensitive data
 
-- Auto-labeling  
-- Mandatory labeling  
-- Default labels for files or email  
-- Teams / SharePoint container labeling  
-- Client or production data  
+- No enforced encryption for high-risk content
 
-These controls were intentionally deferred to later maturity phases.
+- Limited audit defensibility
 
----
+**After**
 
-## Design Decisions & Rationale
+- Structured label taxonomy implemented
 
-### Why No Auto-Labeling?
+- Encryption enforced for high-risk data tiers
 
-Auto-labeling was intentionally excluded to:
+- Clear label priority governance model
 
-- Ensure accuracy through manual intent  
-- Avoid false positives in a small environment  
-- Establish labeling discipline before automation  
+- Centralized publishing policy
 
-### Why No Default Labels?
+- Scalable foundation for future maturity (auto-labeling, DLP)
 
-Default labeling introduces enforcement behavior.  
-This implementation favors adoption-first rollout, allowing users to apply labels intentionally before stricter controls are introduced.
-
-### Why Encryption Only for Confidential & Restricted?
-
-Encryption is applied where risk justifies friction:
-
-- Confidential and Restricted data require enforced protection  
-- Public and Internal data benefit more from clarity than restriction  
+**Result:** Reduced accidental exposure risk and improved compliance defensibility.
 
 ---
 
 ## Security Controls Implemented
 
-- Microsoft Rights Management Service (RMS) activation  
-- Encryption-based access control for sensitive data  
-- Restricted forwarding for high-sensitivity email  
-- Visual classification markings for awareness  
-- Single, centralized label publishing policy  
+- Activation of Microsoft Rights Management Service (RMS)
+
+- Encryption-based access control for Confidential & Restricted labels
+
+- Restricted email forwarding for high-sensitivity content
+
+- Visual classification markings for user awareness
+
+- Centralized sensitivity label publishing policy
 
 ---
 
-## Framework Alignment
+## Validation & Evidence
 
-This implementation supports the following control families:
+- Confirmed label publication across target user scope
 
-### ISO/IEC 27001
-- A.5 – Information security policies  
-- A.8 – Information classification and handling  
+- Verified encryption enforcement on labeled documents
 
-### SOC 2
-- CC6 – Logical and physical access controls  
-- CC7 – System operations and change management  
+- Tested access restrictions for restricted recipients
 
-### NIST CSF
-- PR.DS – Data Security  
-- PR.AC – Access Control  
+- Validated footer markings and visual indicators
 
----
+- Confirmed restricted forwarding enforcement in Outlook
 
-## Evidence & Artifacts
-
-This repository contains:
-
-- Redacted screenshots (where appropriate)  
-- Additional policy and risk templates may be added as separate, standalone artifacts.
- 
-
-All tenant-specific identifiers, domains, and data have been intentionally excluded.
+**See screenshots folder**
+- All tenant-specific identifiers and production data were intentionally excluded.
 
 ---
 
-## Key Takeaway
+## Design Decision & Governance Rationale
 
-Effective information protection is not about enabling every feature — it’s about applying the right controls at the right time.
+### Adoption-First Strategy
 
-This project reflects a practical, audit-defensible approach to information classification that can scale as organizational maturity increases.
+**Auto-labeling and manadatory labeling were intenitonally deferred to:**
+
+- Avoild false positives
+- Promote user education
+- Reduce operational friction
+- Establish labeling discipline
+
+### Encryption Scope Decisions 
+
+**Encryption applied onky where risk justifies friction:**
+
+- Confidential and Restricted -> Enforced protection
+- Internal and Public -> Awareness-focused classification
 
 ---
 
-## Disclaimer
+---
 
-This repository is for demonstration and educational purposes only.  
-No proprietary, client, or production data is included.
+## Controls & Framework Alignment
+
+### NIST Cybersecurity Framework (CSF 2.0)
+
+| Function | Category | Implementation Alignment |
+|----------|----------|--------------------------|
+| PR.DS | Data Security | Encryption applied to sensitive information tiers |
+| PR.AC | Access Control | RMS-based access restriction and forwarding limits |
+| GV.RM | Risk Management | Tiered data classification reduces exposure risk |
+| DE.CM | Continuous Monitoring | Label usage visibility through Purview dashboard |
 
 ---
 
-## Author
+### ISO/IEC 27001:2022
 
-**Kent Ward**  
-GRC Engineer
+| Control | Control Name | Implementation |
+|---------|-------------|---------------|
+| A.5.12 | Classification of Information | Defined multi-tier classification model |
+| A.5.15 | Access Control | Encryption and access restriction for high-risk data |
+| A.5.17 | Authentication Information | Identity-based enforcement of protected content |
+| A.8.12 | Data Leakage Prevention | Restricted forwarding and encryption enforcement |
+
+---
+
+### SOC 2 (Trust Services Criteria)
+
+| Control Family | Alignment |
+|---------------|-----------|
+| CC6 | Logical access controls for sensitive data |
+| CC7 | Monitoring and change governance for label configuration |
+
+---
+
+## Key Takeaways
+
+- Information protection must align with organizational maturity.
+
+- Over-enforcement early can reduce adoption and increase resistance.
+
+- Encryption should be risk-justified, not universally applied.
+
+- Governance-first design creates audit defensibility.
+
+- Data classification is foundational to broader compliance programs.
+
+---
+
+Author: Kent Ward  
+Cloud Governance, Risk & Identity Engineering
+Azure | Purview | IAM | Compliance | Risk Reduction
+
