@@ -5,7 +5,7 @@
 
 ## Executive Summary
 
-This project demonstrates applied **identity governance hardening** in Microsoft Azure. The focus is on reducing excessive privilege, enforcing multi-factor authentication (MFA), implementing just-in-time privileged access using Privileged Identity Management (PIM), and validating control posture through compliance scanning.
+This project demonstrates applied identity governance hardening in Microsoft Azure. The focus is on reducing excessive privilege, enforcing multi-factor authentication (MFA), implementing just-in-time privileged access using Privileged Identity Management (PIM), and validating control posture through compliance scanning.
 
 The objective was to simulate a real-world identity risk scenario and implement governance-aligned remediation controls.
 
