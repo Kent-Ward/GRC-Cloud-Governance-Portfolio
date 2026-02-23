@@ -2,13 +2,13 @@
 
 ## Executive Summary
 
-This project demonstrates foundational **identity governance and IAM hardening** in AWS. The objective is to reduce excessive privilege by applying least-privileged permissions, enforcing MFA, validating role-based access controls, and capturing compliance-oriented evidence using Prowler.
+This project demonstrates foundational identity governance and IAM hardening in AWS. The objective is to reduce excessive privilege by applying least-privileged permissions, enforcing MFA, validating role-based access controls, and capturing compliance-oriented evidence using Prowler.
 
 ---
 
 ## Governance Problem
 
-Cloud environments commonly accumulate **over-privileged identities** (e.g., users with AdministratorAccess) created for speed and never re-scoped. This increases blast radius and raises insider risk exposure.
+Cloud environments commonly accumulate over-privileged identities (ex. users with AdministratorAccess) created for speed and never re-scoped. This increases blast radius and raises insider risk exposure.
 
 **Risk Theme:** Identity & Access Governance (Excessive privileges / weak authentication controls)
 
@@ -179,7 +179,7 @@ Evidence captured:
 
 ## Key Takeaways
 
-- Least privilege must be enforced through **scoped policies**, not broad managed roles.
+- Least privilege must be enforced through scoped policies, not broad managed roles.
 - MFA is a baseline identity governance requirement for interactive accounts.
 - Role assumption with trust policies supports stronger access boundaries and reduces static privilege.
 - Compliance tooling (Prowler) helps validate control posture and produce audit-aligned evidence.
