@@ -3,7 +3,7 @@
 
 ## Overview
 
-This repository demonstrates a **practical GRC approach** to documenting and governing cloud and technical architecture for small to mid-sized organizations.
+This repository demonstrates a practical GRC approach to documenting and governing cloud and technical architecture for small to mid-sized organizations.
 
 The focus is on:
 
@@ -12,7 +12,7 @@ The focus is on:
 - Audit-ready documentation
 - Repeatable delivery for client environments
 
-> This repository contains **no sensitive data** and does not represent any live production environment.
+> This repository contains no sensitive data and does not represent any live production environment.
 
 ---
 
