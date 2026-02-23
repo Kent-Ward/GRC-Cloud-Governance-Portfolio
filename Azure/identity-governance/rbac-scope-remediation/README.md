@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This project demonstrates how to identify and remediate **over-scoped Azure RBAC access** by moving a role assignment from **subscription scope** to the **minimum required scope** (resource group). The focus is governance-driven: reduce blast radius, enforce least privilege, and validate the resulting access posture.
+This project demonstrates how to identify and remediate over-scoped Azure RBAC access by moving a role assignment from **subscription scope** to the **minimum required scope** (resource group). The focus is governance-driven: reduce blast radius, enforce least privilege, and validate the resulting access posture.
 
 ---
 
