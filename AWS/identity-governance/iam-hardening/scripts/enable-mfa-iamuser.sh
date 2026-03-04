@@ -11,13 +11,13 @@ aws iam create-virtual-mfa-device \
   --bootstrap-method QRCodePNG \
   --profile $PROFILE
 
-echo "✅ QR code saved as ${USERNAME}-mfa-qr.png"
-echo "📲 Scan this QR code using Google Authenticator or Authy"
+echo "QR code saved as ${USERNAME}-mfa-qr.png"
+echo "Scan this QR code using Google Authenticator or Authy"
 echo "Then enter the two consecutive MFA codes from the app..."
 
 # Step 2: Prompt for two MFA tokens
-read -p "🔐 MFA Code 1: " CODE1
-read -p "🔐 MFA Code 2: " CODE2
+read -p "MFA Code 1: " CODE1
+read -p "MFA Code 2: " CODE2
 
 # Step 3: Enable MFA device
 aws iam enable-mfa-device \
@@ -27,4 +27,4 @@ aws iam enable-mfa-device \
   --authentication-code2 $CODE2 \
   --profile $PROFILE
 
-echo "✅ MFA device enabled for $USERNAME"
+echo "MFA device enabled for $USERNAME"
