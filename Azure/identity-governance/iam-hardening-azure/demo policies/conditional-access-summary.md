@@ -1,7 +1,7 @@
-# 🔐 Conditional Access Policy - Summary
+# Conditional Access Policy - Summary
 
 **Policy Name**: Require MFA for All Users  
-**Status**: ✅ Enabled (Enforced, not in Report-only mode)  
+**Status**: Enabled (Enforced, not in Report-only mode)  
 **Scope**:
 - **Users**: All users included (except excluded if configured)
 - **Target Resources**: All resources (formerly "All cloud apps")
@@ -10,12 +10,12 @@
 - **Access Controls - Grant**: Require Multi-Factor Authentication
 - **Session Controls**: None selected
 
-📸 **Screenshot evidence saved in:**  
+**Screenshot evidence saved in:**  
 `/azure/evidence/ca-policy-screenshot.png`
 
 ---
 
-## 📌 Notes
+## Notes
 
 - Created via Azure Portal (GUI), not via CLI or PowerShell  
 - Enforces baseline identity protection across the tenant  
@@ -24,5 +24,5 @@
 
 ---
 
-> 🔒 This is a redacted demonstration of Conditional Access used as part of an IAM Hardening Lab. No identifying information has been included.
+> This is a redacted demonstration of Conditional Access used as part of an IAM Hardening Lab. No identifying information has been included.
 
