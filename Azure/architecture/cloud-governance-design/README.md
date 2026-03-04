@@ -1,30 +1,49 @@
-
 # Cloud & Technical Architecture GRC Framework
 
-## Overview
+---
 
-This repository demonstrates a practical GRC approach to documenting and governing cloud and technical architecture for small to mid-sized organizations.
+## Executive Summary
 
-The focus is on:
+This repository demonstrates a **governance-driven approach to documenting and managing cloud architecture** for small-to-mid-sized organizations.
+
+The focus is on building **clear, audit-ready technical architecture documentation** that aligns infrastructure decisions with governance, risk management, and compliance expectations.
+
+The framework prioritizes:
 
 - Accuracy over perfection
-- Current vs planned state clarity
-- Audit-ready documentation
-- Repeatable delivery for client environments
+- Clear **current vs. planned architecture visibility**
+- Repeatable governance documentation
+- Evidence readiness for audits and assessments
 
-> This repository contains no sensitive data and does not represent any live production environment.
+No sensitive information or production data is included in this repository.
+
+---
+
+## Governance Problem
+
+Small organizations frequently operate cloud environments without clear architectural documentation. This creates several governance challenges:
+
+- Lack of visibility into security boundaries
+- Unclear identity and access control models
+- Inconsistent logging and monitoring practices
+- Limited disaster recovery documentation
+- Difficulty demonstrating control maturity during audits
+
+Without structured architecture documentation, organizations struggle to validate whether technical controls support governance objectives.
+
+**Risk Theme:** Cloud Governance & Architecture Visibility
 
 ---
 
 ## Objectives
 
-- Establish a clear, documented security architecture baseline
+- Establish a documented cloud security architecture baseline
 - Align technical controls with governance and risk management
 - Provide a reusable framework for:
     - Security assessments
-    - Architecture design
+    - Architecture design reviews
     - Audit readiness
-    - Client delivery
+    - Client advisory engagements
 
 ---
 
@@ -44,17 +63,18 @@ The focus is on:
 - Identity-driven access (SSO + MFA)
 - Logical access flow diagrams
 - Trust boundaries and assumptions
+- Network segmentation assumptions
 
 ### 3. Logging & Monitoring
 
-- Definition of core systems
-- Minimum security events
+- Identification of core security systems
+- Definition of minimum security events
 - Centralized logging strategy (planned vs implemented)
-- Alerting considerations
+- Alerting and monitoring considerations
 
 ### 4. Backup & Recovery
 
-- Identification of business-critical data
+- Identification of business critical data
 - SaaS and cloud backup planning
 - Offsite encrypted export strategy
 - Restore testing expectations
@@ -70,17 +90,32 @@ The focus is on:
 
 ## GRC Methodology Used
 
-This framework follows a **tiered GRC delivery model**:
+This framework follows a **three-tier GRC delivery model** commonly used in consulting engagements
 
-- **Tier 1:** Current State Assessment
-- **Tier 2:** Architecture Design & Roadmap
-- **Tier 3:** Implementation Support & Evidence Readiness
-
-Each tier builds on the same structure to prevent rework and reduce audit risk.
+### Tier 1 - Current State Assessment
+- Identify existing architecture
+- Document identity, network, and data flows
+- Highlight security and governance gaps
 
 ---
 
-## Repository Structure (Example)
+### Tier 2 - Architecture Design & Roadmap
+- Design a secure target-state architecture
+- Define governance-aligned improvements
+- Establish implementation priorities
+
+---
+
+### Tier 3 - Implementation Support & Evidence Readiness
+- Support technical implementation of controls
+- Capture evidence artifacts
+- Prepare environments for audit or assessment
+
+Each tier builds upon the previous stage to reduce rework and support structured governance maturity.
+
+---
+
+## Repository Structure 
 
 ```text
 /architecture
@@ -95,21 +130,64 @@ Each tier builds on the same structure to prevent rework and reduce audit risk.
 README.md
 ```
 
-> Note: Evidence artifacts shown are illustrative only. In production environments, screenshots and exported logs should be securely stored and access-controlled.
+Note: Evidence artifacts shown are illustrative only. In production environments, screenshots and exported logs should be securely stored and access-controlled.
 ---
 
-## 📋 Control Alignment
+## Controls & Framework Alignment
 
-This framework can be aligned to industry standards such as:
+This architecture governance framework supports several industry-recognized security frameworks by ensuring cloud environments are documented, controlled, and auditable.
 
-- NIST CSF
-- ISO 27001
-- CIS Controls
-- SOC 2
+### NIST Cybersecurity Framework (CSF 2.0)
 
-Control mapping documentation can be added as a separate appendix or control-mapping file depending on business or client requirements.
+| Function | Category | Implementation Alignment |
+|----------|----------|--------------------------|
+| GV.RM | Risk Management Strategy | Architecture documentation supports governance visibility |
+| PR.AC | Access Control | Identity-driven access design and RBAC architecture |
+| PR.DS | Data Security | Backup and encryption architecture planning |
+| DE.CM | Continuous Monitoring | Centralized logging and monitoring strategy |
 
 ---
+
+### ISO/IEC 27001:2022
+
+| Control | Control Name | Implementation |
+|---------|-------------|---------------|
+| A.5.1 | Policies for Information Security | Architecture governance framework |
+| A.5.15 | Access Control | Identity and RBAC architecture design |
+| A.8.15 | Logging & Monitoring | Centralized logging strategy |
+| A.8.13 | Information Backup | Backup architecture planning |
+
+---
+
+### CIS Controls v8
+
+| Control | Safeguard | Implementation |
+|----------|----------|---------------|
+| 4 | Secure Configuration | Baseline architecture documentation |
+| 5 | Account Management | Group-based IAM architecture |
+| 8 | Audit Log Management | Centralized logging strategy |
+| 11 | Data Recovery | Backup and recovery planning |
+
+---
+
+### SOC 2 Trust Services Criteria
+
+| Domain | Implementation |
+|------|----------------|
+| CC6 | Logical Access Controls |
+| CC7 | System Operations Monitoring |
+| CC8 | Change Management |
+| CC9 | Risk Mitigation & Governance |
+
+---
+
+## Key Takeaways 
+- Architecture documentation is a governance control, not just a technical artifact.
+- Clear current vs planned architecture visibility improves risk management.
+- Identity architecture must be defined early to prevent privilege sprawl.
+- Logging and monitoring architecture enables security detection capabilities.
+- Governance documentation improves audit readiness and operational maturity.
+
 
 ## Author
 
