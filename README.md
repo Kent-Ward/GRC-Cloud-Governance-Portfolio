@@ -1,10 +1,16 @@
 # Cloud Governance Portfolio
 
-This repository represents applied Governance, Risk & Compliance (GRC) engineering work across Microsoft Azure and Amazon Web Services (AWS).
+This repository represents applied **Governance, Risk, and Compliance (GRC) engineering** work across **Microsoft Azure** and **Amazon Web Services (AWS)**.
 
-The projects demonstrate structured cloud governance implementation focused on identity governance, access scope management, least privilege enforcement, control validation, and architectural alignment.
+The projects demonstrate structured cloud governance implementation focused on:
 
-The repository is organized by cloud platform and governance domain to reflect a real-world cloud governance program structure.
+- Identity governance
+- Access scope management
+- Least privilege enforcement
+- Control validation
+- Governance-driven cloud architecture design
+
+The repository is organized by **cloud platform** and **governance domain** to reflect how real-world cloud governance programs are structured.
 
 ---
 
